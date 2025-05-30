@@ -1,0 +1,25 @@
+import pandas as pd
+
+data={'Name':['Vivek','Ram','Shyam'],
+      'age':[22,23,24],
+      'hobby':['Play','eat','sleep']}
+
+
+df=pd.Series(data)  # series means 1d type read the data
+print(df)
+'''Name     [Vivek, Ram, Shyam]
+age             [22, 23, 24]
+hobby     [Play, eat, sleep]
+dtype: object'''
+
+df=pd.DataFrame(data) #dataframe 2d row column wise read the data
+print(df)
+''' Name  age  hobby
+0  Vivek   22   Play
+1    Ram   23    eat
+2  Shyam   24  sleep'''
+
+# save this file into csv/xlsx/json -> which is shown in vscode folder(left side)
+df.to_json("output.json",index=False)
+df.to_excel("output.xlsx",index=False)
+df.to_csv("output.csv",index=False)
