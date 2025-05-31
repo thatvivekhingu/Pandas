@@ -28,3 +28,26 @@ data1= {
 df.sort_values(by=['Age','Salary','Name'],ascending=[True,False,True],inplace=True) 
 print(f'\n{df}')
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#When we create group of every unique value 
+df=pd.DataFrame(data1)
+Group=df.groupby("Age")["Salary"].sum()
+print(Group)
+'''
+Age
+28     98000
+32     45000
+34    112000
+Name: Salary, dtype: int64'''
+
+df=pd.DataFrame(data1)
+Group=df.groupby(["Age","Name"])["Salary"].sum()
+print(Group)
+'''
+Age  Name
+28   Arun     50000
+     Marun    48000
+32   Karun    45000
+34   Varun    60000
+     narun    52000
+Name: Salary, dtype: int64'''
