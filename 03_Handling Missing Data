@@ -1,1 +1,34 @@
+data = {
+    "Name": ['Ram', None, 'Ghanshyam', 'Dhanshyam', 'Aditi', 'Jagdish', 'Raj', 'Simran'],
+    "Age": [28, None, 22, 30, 29, 40, 25, 32],
+    "Salary": [50000,None, 45000, 52000, 49000, 70000, 48000, 58000],
+    "Performance_Score": [85, None, 78, 92, 88, 95, 80, 89]
+}
+
+df=pd.DataFrame(data)
+print(df)
+--------------------------------------------------------------------------------- FIND MISSING VALUES--------------------------------------------------------------------------
+# Detect the any missing value used -> which is give ans in boolean form(true indicate if it is having a any null value) 
+
+print(df.isnull())
+''' Name    Age  Salary  Performance_Score
+0  False  False   False              False
+1   True   True    True               True <-------------- 2nd row have certain Null values
+2  False  False   False              False
+3  False  False   False              False
+4  False  False   False              False
+5  False  False   False              False
+6  False  False   False              False
+7  False  False   False              False'''
+
+# when you want to cheak how many missing value are their in column so,
+print(df.isnull().sum())
+'''
+Name                 1
+Age                  1
+Salary               1
+Performance_Score    1
+dtype: int64
+'''
+---------------------------------------------------------------------------------HANDLE MISSING VALUES--------------------------------------------------------------------------
 
