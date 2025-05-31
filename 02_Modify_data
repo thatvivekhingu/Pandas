@@ -10,6 +10,7 @@ data = {
 df=pd.DataFrame(data)
 print(df)
 
+-----------------------------------------------------------------------------------------------------------------------------
 # adding column in data set in last column::::::
 #syntax: df["column_name"]=some_data(what you can store in clmn)(even calculate data like 10% other type data can you store)
 
@@ -21,3 +22,19 @@ print(f"\n {df}")
 df.insert(1,"Rank",[5,7,3,4,9,6,1,2])
 print(f'\n\n Using insert method add the column')
 print(f'\n{df}')
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+#Updating any values in data set 
+#syntax: .loc[row_index,"column_name"] = new_data
+
+# if i want change the salary of Aditi
+
+df.loc[4,"Salary"] = 62000
+print(df)
+
+# if i want to update salary value increases 5%
+df['Salary']=df['Salary']* 1.05
+
+print(df)
