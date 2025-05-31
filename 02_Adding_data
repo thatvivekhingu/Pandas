@@ -1,0 +1,23 @@
+import pandas as pd
+
+data = {
+    "Name": ['Ram', 'Shyam', 'Ghanshyam', 'Dhanshyam', 'Aditi', 'Jagdish', 'Raj', 'Simran'],
+    "Age": [28, 34, 22, 30, 29, 40, 25, 32],
+    "Salary": [50000, 60000, 45000, 52000, 49000, 70000, 48000, 58000],
+    "Performance_Score": [85, 90, 78, 92, 88, 95, 80, 89]
+}
+
+df=pd.DataFrame(data)
+print(df)
+
+# adding column in data set in last column::::::
+#syntax: df["column_name"]=some_data(what you can store in clmn)(even calculate data like 10% other type data can you store)
+
+df["Bonus"]= df["Salary"]* 0.1 #(add data of salaray 10% )
+print(f"\n {df}")
+
+#-> if you add column in specific location so used insert()method
+#syntax : df.insert(loc,"column_name",some_data)
+df.insert(1,"Rank",[5,7,3,4,9,6,1,2])
+print(f'\n\n Using insert method add the column')
+print(f'\n{df}')
