@@ -1,1 +1,30 @@
 
+data = {
+    "Name": ['Arun', 'Varun', 'Karun'],
+    "Age": [28,34,32],
+    "Salary": [10000, 20000, 30000]
+}
+
+df=pd.DataFrame(data)
+print(df)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+#Sorting data 
+#(in 1 column)
+#syntax: df.sort_values(by="column_name",True/False,inplace=True) 
+# (True/False -> ascending or descending order arrange data means sort thr data)
+
+'''sort data in ascending order of age'''
+df.sort_values(by="Age",ascending=True,inplace=True) 
+print(df)
+
+# for multiple column 
+data1= {
+    "Name": ['Arun', 'Varun', 'Karun','narun','Marun'],
+    "Age": [28,34,32,34,28],
+    "Salary": [50000,60000,45000,52000,48000]
+}
+
+df.sort_values(by=['Age','Salary','Name'],ascending=[True,False,True],inplace=True) 
+print(f'\n{df}')
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
