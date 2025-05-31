@@ -1,1 +1,57 @@
+# Merging & Joining in pandas
+import pandas as pd
 
+# customer dataframe
+df_customers = pd.DataFrame({
+    'CustomerID': [1, 2, 3],
+    'Name': ['Ramesh', 'Suresh', 'Kalpesh']
+})
+
+# order dataframe
+df_orders = pd.DataFrame({
+    'CustomerID': [1, 2, 4],
+    'OrderAmount': [250, 450, 350]
+})
+
+# merge
+df_merged = pd.merge(df_customers, df_orders, on='CustomerID', how='inner')
+print("inner Join")
+print(df_merged)
+'''
+inner Join
+   CustomerID    Name  OrderAmount
+0           1  Ramesh          250
+1           2  Suresh          450'''
+
+df_merged = pd.merge(df_customers, df_orders, on='CustomerID', how='outer')
+print("outer Join")
+print(df_merged)
+'''
+outer Join
+   CustomerID     Name  OrderAmount
+0           1   Ramesh        250.0
+1           2   Suresh        450.0
+2           3  Kalpesh          NaN
+3           4      NaN        350.0
+'''
+df_merged = pd.merge(df_customers, df_orders, on='CustomerID', how='left')
+print("Left Join")
+print(df_merged)
+'''
+Left Join
+   CustomerID     Name  OrderAmount
+0           1   Ramesh        250.0
+1           2   Suresh        450.0
+2           3  Kalpesh          NaN
+'''
+
+df_merged = pd.merge(df_customers, df_orders, on='CustomerID', how='right')
+print("Right Join")
+print(df_merged)
+'''
+Right Join
+   CustomerID    Name  OrderAmount
+0           1  Ramesh          250
+1           2  Suresh          450
+2           4     NaN          350
+'''
