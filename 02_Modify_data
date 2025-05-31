@@ -38,3 +38,13 @@ print(df)
 df['Salary']=df['Salary']* 1.05
 
 print(df)
+-----------------------------------------------------------------------------------------------------------------------------
+
+#Removing any column in data set 
+#syntax: df.drop(columns=["Column_name"], inplace=True) -> inplace true means modify in real data, false give new updated dataset
+
+df.drop(columns=["Age"],inplace=True) # remove the age column 
+print(f'\n{df}')
+
+df.drop(columns=["Age","Salary"],inplace=True) # remove the age . salary column 
+print(f'\n{df}')
