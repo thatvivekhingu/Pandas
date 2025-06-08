@@ -4,7 +4,6 @@ data={'Name':['Vivek','Ram','Shyam'],
       'age':[22,23,24],
       'hobby':['Play','eat','sleep']}
 
-
 df=pd.Series(data)  # series means 1d type read the data
 print(df)
 '''Name     [Vivek, Ram, Shyam]
