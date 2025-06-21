@@ -9,7 +9,6 @@ data = {
 
 df=pd.DataFrame(data)
 print(df)
-
 -----------------------------------------------------------------------------------------------------------------------------
 # adding column in data set in last column::::::
 #syntax: df["column_name"]=some_data(what you can store in clmn)(even calculate data like 10% other type data can you store)
