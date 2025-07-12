@@ -1,2 +1,2 @@
 # Pandas
-Pandas is used to analyze data
+Pandas is used to analyze dat
