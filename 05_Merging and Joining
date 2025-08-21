@@ -57,41 +57,87 @@ Right Join
 2           4     NaN          350
 '''
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cool Calculator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="calculator">
-    <input type="text" id="display" disabled>
-    <div class="buttons">
-      <button class="clear" onclick="clearDisplay()">C</button>
-      <button onclick="appendValue('/')">÷</button>
-      <button onclick="appendValue('*')">×</button>
-      <button onclick="appendValue('-')">−</button>
+/* Background Gradient */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: "Poppins", sans-serif;
+}
 
-      <button onclick="appendValue('7')">7</button>
-      <button onclick="appendValue('8')">8</button>
-      <button onclick="appendValue('9')">9</button>
-      <button onclick="appendValue('+')">+</button>
+/* Calculator Box */
+.calculator {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  width: 300px;
+}
 
-      <button onclick="appendValue('4')">4</button>
-      <button onclick="appendValue('5')">5</button>
-      <button onclick="appendValue('6')">6</button>
-      <button class="equal" onclick="calculate()">=</button>
+/* Display */
+#display {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  text-align: right;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+}
 
-      <button onclick="appendValue('1')">1</button>
-      <button onclick="appendValue('2')">2</button>
-      <button onclick="appendValue('3')">3</button>
-      <button onclick="appendValue('.')">.</button>
+/* Buttons Layout */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
 
-      <button class="zero" onclick="appendValue('0')">0</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+/* Button Style */
+button {
+  padding: 18px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+button:hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 12px cyan, 0 0 20px cyan;
+}
+
+/* Special Buttons */
+.clear {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.clear:hover {
+  background: rgba(255, 0, 0, 0.7);
+  box-shadow: 0 0 15px red;
+}
+
+.equal {
+  background: rgba(0, 255, 100, 0.5);
+  grid-row: span 2;
+}
+
+.equal:hover {
+  background: rgba(0, 255, 100, 0.8);
+  box-shadow: 0 0 15px lime;
+}
+
+.zero {
+  grid-column: span 2;
+}
